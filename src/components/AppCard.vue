@@ -28,7 +28,20 @@
         class="pa-0"
         style="height: 100%"
       >
+        <video
+          v-if="video"
+          ref="videoPlayer"
+          height="100%"
+          width="100%"
+          playsinline
+          autoplay
+          :muted="true"
+          loop
+          :src="video"
+          style="object-fit: cover;"
+        ></video>
         <v-img
+          v-if="image"
           height="100%"
           :src="image"
         />
@@ -121,7 +134,20 @@
         class="pa-0"
         style="height: 100%"
       >
+        <video
+          v-if="video"
+          ref="videoPlayer"
+          height="100%"
+          width="100%"
+          playsinline
+          autoplay
+          :muted="true"
+          loop
+          :src="video"
+          style="object-fit: cover;"
+        ></video>
         <v-img
+          v-if="image"
           height="100%"
           :src="image"
         />
@@ -140,7 +166,20 @@
         class="pa-0 ma-0"
       >
         <v-col cols="12" class="pa-0 ma-0">
+          <video
+            v-if="video"
+            ref="videoPlayer"
+            height="100%"
+            width="100%"
+            playsinline
+            autoplay
+            :muted="true"
+            loop
+            :src="video"
+            style="object-fit: cover;"
+          ></video>
           <v-img
+            v-if="image"
             height="100%"
             :src="image"
           />
@@ -209,6 +248,7 @@ export default {
     textColor: String,
 
     image: String,
+    video: String,
     apptitle: String,
 
     appDescription: String,
@@ -264,14 +304,14 @@ export default {
 
 <style scoped>
 h1 {
-  font-size: 50px;
-  font-family: "Swis721 BlkEx BT", sans-serif;
+  font-size: 48px;
+  font-family: "TitleFont", sans-serif;
   padding-bottom: 6px;
 }
 
 p {
   padding-top: 6px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Microsoft YaHei UI", sans-serif;
 }
 
@@ -283,19 +323,19 @@ li {
   padding-top: 6px;
 
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Microsoft YaHei UI Light", sans-serif;
 }
 
 .h1Vertical {
-  font-size: 40px;
-  font-family: "Swis721 BlkEx BT", sans-serif;
+  font-size: 38px;
+  font-family: "TitleFont", sans-serif;
   padding-bottom: 6px;
 }
 
 .pVertical {
   padding-top: 6px;
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Microsoft YaHei UI", sans-serif;
 }
 
@@ -303,8 +343,13 @@ li {
   padding-top: 6px;
 
   font-style: italic;
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Microsoft YaHei UI Light", sans-serif;
+}
+
+@font-face {
+  font-family: 'TitleFont';
+  src: url('../assets/fonts/swissek.ttf') format('truetype')
 }
 
 </style>

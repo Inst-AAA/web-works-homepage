@@ -19,9 +19,10 @@ export default {
     simformsFea2: 'Provide dozens of multi-storey/high-rise building styles. Rapidly generate precise 3D model with simple parameters.',
     simformsFea3: 'Generate architectural concept renderings with AIGC, without complex configurations.',
 
-    typogenDesc: '（In Research）TypoGen is a topology-oriented architectural generative design application.',
+    typogenDesc: '（In Progress）TypoGen is a topology-oriented architectural generative design application.',
     typogenFea1: 'Import your design site for automatic plot subdivision.',
     typogenFea2: 'Defined the building form according to topological relationship. Automatically optimize building model based on the site environment.',
     typogenFea3: 'Upload the data of the function&area requirements to distribute rooms automatically.',
 
+    genartDesc: 'GenArt takes generative art as its core content and provides creative product design and service.',
 }

@@ -25,29 +25,20 @@
     <v-main>
       <BackToTop></BackToTop>
 
+      <TopNavi></TopNavi>
       <HeadCard></HeadCard>
+      <PageFooter></PageFooter>
 
       <!--  SIMForms  -->
       <AppCard
         :color="COLORS.APP01_BG"
         :title-color="COLORS.APP01"
-        :image="publicPath+'/images/simforms.gif'"
+        :video="publicPath+'/images/simforms.mp4'"
         img-position="left"
         apptitle="SIMForms"
         :app-description="$t('simformsDesc')"
         :app-feature="['simformsFea1','simformsFea2','simformsFea3']"
         link="https://web.archialgo.com/simforms/"
-      ></AppCard>
-
-      <!--  TypoGen  -->
-      <AppCard
-        :color="COLORS.APP02_BG"
-        :title-color="COLORS.APP02"
-        :image="publicPath+'/images/typogen.jpg'"
-        img-position="right"
-        apptitle="TypoGen"
-        :appDescription="$t('typogenDesc')"
-        :app-feature="['typogenFea1','typogenFea2','typogenFea3']"
       ></AppCard>
 
       <!--  Silk  -->
@@ -58,18 +49,21 @@
         :image="publicPath+'/images/scarves.jpg'"
         text-position="right"
         apptitle="GenArt"
+        :appDescription="$t('genartDesc')"
         :gallery-paths=scarvesGallery
       ></AppCardFill>
-    </v-main>
 
-    <v-footer dark padless>
-      <v-col
-        class="text-center"
-        cols="12"
-      >
-        {{ new Date().getFullYear() }} ©<strong>Inst. AAA</strong>
-      </v-col>
-    </v-footer>
+      <!--  TypoGen  -->
+      <AppCard
+        :color="COLORS.APP02_BG"
+        :title-color="COLORS.APP02"
+        :video="publicPath+'/images/typogen.mp4'"
+        img-position="right"
+        apptitle="TypoGen"
+        :appDescription="$t('typogenDesc')"
+        :app-feature="['typogenFea1','typogenFea2','typogenFea3']"
+      ></AppCard>
+    </v-main>
   </v-app>
 </template>
 
@@ -80,10 +74,14 @@ import {COLORS} from "@/color/colors";
 import BackToTop from "@/components/BackToTop.vue";
 import HeadCard from "@/components/HeadCard.vue";
 import {publicPath} from "../vue.config";
+import TopNavi from "@/components/TopNavi.vue";
+import PageFooter from "@/components/PageFooter.vue";
 
 export default {
   name: 'App',
   components: {
+    PageFooter,
+    TopNavi,
     BackToTop,
     AppCard,
     AppCardFill,

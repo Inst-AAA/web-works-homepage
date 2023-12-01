@@ -4,18 +4,20 @@
     style="align-content: center"
     :style="{ backgroundImage: 'url(' + backgroundImage + ')',backgroundSize: 'cover', width: sheetWidth + 'px', height: 600 + 'px' }"
   >
-    <div >
+    <div style="background-color: rgba(225,225,225,0.67)">
+      <br>
+      <br>
       <h1>
         Our Work
       </h1>
       <br>
       <br>
 
-<!--      <p class="institution-text">-->
-<!--        {{ $t('head1') }}-->
-<!--        <br>-->
-<!--        {{ $t('head2') }}-->
-<!--      </p>-->
+      <!--      <p class="institution-text">-->
+      <!--        {{ $t('head1') }}-->
+      <!--        <br>-->
+      <!--        {{ $t('head2') }}-->
+      <!--      </p>-->
       <br>
 
       <v-img
@@ -24,9 +26,12 @@
       >
       </v-img>
       <p style="font-size: 12px">
-        建筑运算与应用研究所<br>
-        Institute of Architectural Algorithms and Applications
+        <b>
+          建筑运算与应用研究所<br>
+          Institute of Architectural Algorithms and Applications
+        </b>
       </p>
+      <br>
     </div>
   </v-sheet>
 
@@ -84,12 +89,12 @@ div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 100%;
 }
 
 h1 {
-  font-size: 56px;
-  font-family: "Swis721 BlkEx BT", sans-serif;
+  font-size: 48px;
+  font-family: "TitleFont", sans-serif;
   padding-bottom: 6px;
   display: inline-block;
   text-align: center;
@@ -117,5 +122,10 @@ p.institution-text {
   p.institution-text {
     font-size: 18px; /* Set larger font size for larger screens */
   }
+}
+
+@font-face {
+  font-family: 'TitleFont';
+  src: url('../assets/fonts/swissek.ttf') format('truetype')
 }
 </style>

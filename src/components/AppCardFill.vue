@@ -251,14 +251,14 @@ export default {
 }
 
 h1 {
-  font-size: 50px;
-  font-family: "Swis721 BlkEx BT", sans-serif;
+  font-size: 48px;
+  font-family: "TitleFont", sans-serif;
   padding-bottom: 6px;
 }
 
 p {
   padding-top: 6px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Microsoft YaHei UI", sans-serif;
 }
 
@@ -270,19 +270,19 @@ li {
   padding-top: 6px;
 
   font-style: italic;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Microsoft YaHei UI Light", sans-serif;
 }
 
 .h1Vertical {
-  font-size: 40px;
-  font-family: "Swis721 BlkEx BT", sans-serif;
+  font-size: 38px;
+  font-family: "TitleFont", sans-serif;
   padding-bottom: 6px;
 }
 
 .pVertical {
   padding-top: 6px;
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Microsoft YaHei UI", sans-serif;
 }
 
@@ -290,8 +290,13 @@ li {
   padding-top: 6px;
 
   font-style: italic;
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Microsoft YaHei UI Light", sans-serif;
+}
+
+@font-face {
+  font-family: 'TitleFont';
+  src: url('../assets/fonts/swissek.ttf') format('truetype')
 }
 
 </style>
