@@ -28,18 +28,37 @@
         class="pa-0"
         style="height: 100%"
       >
+        <!--        <video-->
+        <!--          id="vid1"-->
+        <!--          class="video-js"-->
+        <!--          :autoplay="true"-->
+        <!--          loop="loop"-->
+        <!--          v-if="video"-->
+        <!--          ref="videoPlayer"-->
+        <!--          height="100%"-->
+        <!--          width="100%"-->
+        <!--          playsinline-->
+        <!--          style="object-fit: cover;"-->
+        <!--        >-->
+        <!--          <source :src="video">-->
+        <!--        </video>-->
+
         <video
           v-if="video"
-          ref="videoPlayer"
+          id="my-player"
+          class="video-js"
+          loop="loop"
+          playsinline
+          preload="auto"
           height="100%"
           width="100%"
-          playsinline
+          muted
           autoplay
-          :muted="true"
-          loop
-          :src="video"
           style="object-fit: cover;"
-        ></video>
+        >
+          <source :src="video">
+        </video>
+
         <v-img
           v-if="image"
           height="100%"
@@ -136,16 +155,19 @@
       >
         <video
           v-if="video"
-          ref="videoPlayer"
+          id="my-player"
+          class="video-js"
+          loop="loop"
+          playsinline
+          preload="auto"
           height="100%"
           width="100%"
-          playsinline
+          muted
           autoplay
-          :muted="true"
-          loop
-          :src="video"
           style="object-fit: cover;"
-        ></video>
+        >
+          <source :src="video">
+        </video>
         <v-img
           v-if="image"
           height="100%"
@@ -168,16 +190,19 @@
         <v-col cols="12" class="pa-0 ma-0">
           <video
             v-if="video"
-            ref="videoPlayer"
+            id="my-player"
+            class="video-js"
+            loop="loop"
+            playsinline
+            preload="auto"
             height="100%"
             width="100%"
-            playsinline
+            muted
             autoplay
-            :muted="true"
-            loop
-            :src="video"
             style="object-fit: cover;"
-          ></video>
+          >
+            <source :src="video">
+          </video>
           <v-img
             v-if="image"
             height="100%"
@@ -273,6 +298,9 @@ export default {
   },
 
   created() {
+    // this.videoPlayer = videojs('my-video', {
+    //   autoplay: 'muted'
+    // });
     this.updateSheetSize();
     window.addEventListener('resize', this.updateSheetSize);
   },
