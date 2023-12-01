@@ -1,13 +1,13 @@
 <template>
   <v-app style="user-select: none">
-<!--    <v-app-bar-->
-<!--      app-->
-<!--      absolute-->
-<!--      color="transparent"-->
-<!--      dark-->
-<!--    >-->
+    <!--    <v-app-bar-->
+    <!--      app-->
+    <!--      absolute-->
+    <!--      color="transparent"-->
+    <!--      dark-->
+    <!--    >-->
 
-<!--    </v-app-bar>-->
+    <!--    </v-app-bar>-->
 
     <!--  localization button  -->
     <v-btn
@@ -33,7 +33,7 @@
       <AppCard
         :color="COLORS.APP01_BG"
         :title-color="COLORS.APP01"
-        :video="publicPath+'/images/simforms.mp4'"
+        :images="simformsImages"
         img-position="left"
         apptitle="SIMForms"
         :app-description="$t('simformsDesc')"
@@ -46,7 +46,7 @@
         :color="COLORS.APP03_BG"
         :title-color="COLORS.APP03"
         :text-color="COLORS.APP03"
-        :image="publicPath+'/images/scarves.jpg'"
+        :image="publicPath+'/images/genart.jpg'"
         text-position="right"
         apptitle="GenArt"
         :appDescription="$t('genartDesc')"
@@ -57,7 +57,7 @@
       <AppCard
         :color="COLORS.APP02_BG"
         :title-color="COLORS.APP02"
-        :video="publicPath+'/images/typogen.mp4'"
+        :images="typogenImages"
         img-position="right"
         apptitle="TypoGen"
         :appDescription="$t('typogenDesc')"
@@ -103,6 +103,8 @@ export default {
     showButton: false,
 
     // gallery paths
+    simformsImages: [],
+    typogenImages: [],
     scarvesGallery: []
   }),
 
@@ -131,10 +133,24 @@ export default {
 
   created() {
     // load scarves imgs
+    this.simformsImages = []
+    const path1 = publicPath + '/images/simforms/'
+    for (let i = 0; i < 4; i++) {
+      this.simformsImages.push(path1 + (i + 1) + '.jpg')
+    }
+
+    // load scarves imgs
+    this.typogenImages = []
+    const path2 = publicPath + '/images/typogen/'
+    for (let i = 0; i < 4; i++) {
+      this.typogenImages.push(path2 + (i + 1) + '.jpg')
+    }
+
+    // load scarves imgs
     this.scarvesGallery = []
-    const path = publicPath + '/images/scarvesImgs/'
+    const path3 = publicPath + '/images/genartGallery/'
     for (let i = 0; i < 20; i++) {
-      this.scarvesGallery.push(path + (i + 1) + '.jpg')
+      this.scarvesGallery.push(path3 + (i + 1) + '.jpg')
     }
   }
 };

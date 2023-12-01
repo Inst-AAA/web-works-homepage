@@ -27,43 +27,23 @@
         cols="7"
         class="pa-0"
         style="height: 100%"
+        id="videoArea"
       >
-        <!--        <video-->
-        <!--          id="vid1"-->
-        <!--          class="video-js"-->
-        <!--          :autoplay="true"-->
-        <!--          loop="loop"-->
-        <!--          v-if="video"-->
-        <!--          ref="videoPlayer"-->
-        <!--          height="100%"-->
-        <!--          width="100%"-->
-        <!--          playsinline-->
-        <!--          style="object-fit: cover;"-->
-        <!--        >-->
-        <!--          <source :src="video">-->
-        <!--        </video>-->
-
-        <video
-          v-if="video"
-          id="my-player"
-          class="video-js"
-          loop="loop"
-          playsinline
-          preload="auto"
+        <v-carousel
           height="100%"
-          width="100%"
-          muted
-          autoplay
-          style="object-fit: cover;"
+          cycle
+          interval="3000"
+          hide-delimiters
+          :show-arrows="false"
         >
-          <source :src="video">
-        </video>
-
-        <v-img
-          v-if="image"
-          height="100%"
-          :src="image"
-        />
+          <v-carousel-item
+            v-for="(item,i) in images"
+            :key="i"
+            :src="item"
+            
+          >
+          </v-carousel-item>
+        </v-carousel>
       </v-col>
       <!-- 文字 -->
       <v-col
@@ -153,26 +133,20 @@
         class="pa-0"
         style="height: 100%"
       >
-        <video
-          v-if="video"
-          id="my-player"
-          class="video-js"
-          loop="loop"
-          playsinline
-          preload="auto"
+        <v-carousel
           height="100%"
-          width="100%"
-          muted
-          autoplay
-          style="object-fit: cover;"
+          cycle
+          interval="3000"
+          hide-delimiters
+          :show-arrows="false"
         >
-          <source :src="video">
-        </video>
-        <v-img
-          v-if="image"
-          height="100%"
-          :src="image"
-        />
+          <v-carousel-item
+            v-for="(item,i) in images"
+            :key="i"
+            :src="item"
+          >
+          </v-carousel-item>
+        </v-carousel>
       </v-col>
     </v-row>
 
@@ -188,26 +162,20 @@
         class="pa-0 ma-0"
       >
         <v-col cols="12" class="pa-0 ma-0">
-          <video
-            v-if="video"
-            id="my-player"
-            class="video-js"
-            loop="loop"
-            playsinline
-            preload="auto"
+          <v-carousel
             height="100%"
-            width="100%"
-            muted
-            autoplay
-            style="object-fit: cover;"
+            cycle
+            interval="3000"
+            hide-delimiters
+            :show-arrows="false"
           >
-            <source :src="video">
-          </video>
-          <v-img
-            v-if="image"
-            height="100%"
-            :src="image"
-          />
+            <v-carousel-item
+              v-for="(item,i) in images"
+              :key="i"
+              :src="item"
+            >
+            </v-carousel-item>
+          </v-carousel>
         </v-col>
       </v-row>
       <!-- 文字 -->
@@ -254,7 +222,7 @@
 <script>
 
 import ImageGallery from "@/components/ImageGallery.vue";
-// import {publicPath} from "@/../vue.config";
+// import videojs from "video.js";
 
 export default {
   components: {ImageGallery},
@@ -272,8 +240,7 @@ export default {
     titleColor: String,
     textColor: String,
 
-    image: String,
-    video: String,
+    images: Array,
     apptitle: String,
 
     appDescription: String,

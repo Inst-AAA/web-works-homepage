@@ -8,7 +8,7 @@
       <br>
       <br>
       <h1>
-        Our Works
+        Works
       </h1>
       <br>
       <br>
