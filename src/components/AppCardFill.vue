@@ -14,119 +14,98 @@
       />
     </v-dialog>
 
-    <!-- 横屏左图 -->
-    <v-row
-      v-if="isLandscape&&imgPosition==='left'"
-      justify="center"
-      align="center"
-      style="height: 100%"
-      class="ma-0 pa-0"
+    <!-- 横屏满铺 -->
+    <v-img
+      v-if="isLandscape"
+      :src="image"
+      height="100%"
+      width="100%"
     >
-      <!-- 图片 -->
-      <v-col
-        cols="7"
-        class="pa-0"
-        style="height: 100%"
-      >
-        <v-img
-          height="100%"
-          :src="image"
-        />
-      </v-col>
-      <!-- 文字 -->
-      <v-col
-        cols="5"
-        class="px-16"
-      >
-        <h1
-          :style="{color: titleColor}"
-        >
-          {{ apptitle }}
-        </h1>
-        <p :style="{color: textColor}">{{ appDescription }}</p>
-        <ul>
-          <li
-            v-for="(fea, id) in appFeature"
-            :key="id"
-            :style="{color: textColor}"
-          >
-            {{ $t(fea) }}
-          </li>
-        </ul>
-        <v-btn
-          v-if="link"
-          :color="titleColor"
-          :href="link"
-          target="_blank"
-          outlined
-        >
-          <div>{{ $t('view') }}</div>
-        </v-btn>
-        <v-btn
-          v-if="galleryPaths"
-          :color="titleColor"
-          target="_blank"
-          outlined
-        >
-          <div>{{ $t('gallery') }}</div>
-        </v-btn>
-      </v-col>
-    </v-row>
 
-    <!-- 横屏右图 -->
-    <v-row
-      v-else-if="isLandscape&&imgPosition==='right'"
-      justify="center"
-      align="center"
-      style="height: 100%"
-      class="ma-0 pa-0"
-    >
-      <!-- 文字 -->
-      <v-col
-        cols="5"
-        class="px-16"
-      >
-        <h1 :style="{color: titleColor}">{{ apptitle }}</h1>
-        <p :style="{color: textColor}">{{ appDescription }}</p>
-        <ul>
-          <li
-            v-for="(fea, id) in appFeature"
-            :key="id"
-            :style="{color: textColor}"
-          >
-            {{ $t(fea) }}
-          </li>
-        </ul>
-        <v-btn
-          v-if="link"
-          :color="titleColor"
-          :href="link"
-          target="_blank"
-          outlined
-        >
-          <div>{{ $t('view') }}</div>
-        </v-btn>
-        <v-btn
-          v-if="galleryPaths"
-          :color="titleColor"
-          target="_blank"
-          outlined
-        >
-          <div>{{ $t('gallery') }}</div>
-        </v-btn>
-      </v-col>
-      <!-- 图片 -->
-      <v-col
-        cols="7"
-        class="pa-0"
+      <!-- 文字在左 -->
+      <v-row
+        v-if="textPosition==='left'"
         style="height: 100%"
+        align="center"
       >
-        <v-img
-          height="100%"
-          :src="image"
-        />
-      </v-col>
-    </v-row>
+        <v-col
+          cols="5"
+          class="px-16"
+        >
+          <h1 :style="{color: titleColor}">{{ apptitle }}</h1>
+          <p :style="{color: textColor}">{{ appDescription }}</p>
+          <ul>
+            <li
+              :style="{color: textColor}"
+              v-for="(fea, id) in appFeature"
+              :key="id"
+            >
+              {{ $t(fea) }}
+            </li>
+          </ul>
+          <v-btn
+            v-if="link"
+            :color="titleColor"
+            :href="link"
+            target="_blank"
+            outlined
+          >
+            <div>{{ $t('view') }}</div>
+          </v-btn>
+          <v-btn
+            v-if="galleryPaths"
+            :color="titleColor"
+            @click="showGallery=true"
+            outlined
+          >
+            <div>{{ $t('gallery') }}</div>
+          </v-btn>
+        </v-col>
+      </v-row>
+
+      <!-- 文字在右 -->
+      <v-row
+        v-else
+        style="height: 100%"
+        align="center"
+        justify="end"
+      >
+        <v-col
+          cols="5"
+          class="px-16"
+        >
+          <h1 :style="{color: titleColor}">{{ apptitle }}</h1>
+          <p :style="{color: textColor}">{{ appDescription }}</p>
+          <ul>
+            <li
+              :style="{color: textColor}"
+              v-for="(fea, id) in appFeature"
+              :key="id"
+            >
+              {{ $t(fea) }}
+            </li>
+          </ul>
+          <v-btn
+            v-if="link"
+            :color="titleColor"
+            :href="link"
+            target="_blank"
+            outlined
+          >
+            <div>{{ $t('view') }}</div>
+          </v-btn>
+          <v-btn
+            v-if="galleryPaths"
+            :color="titleColor"
+            @click="showGallery=true"
+            outlined
+          >
+            <div>{{ $t('gallery') }}</div>
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-img>
+
 
     <!-- 竖屏 -->
     <v-container
@@ -134,7 +113,6 @@
       style="height: 100%;justify-content: center;align-content: center"
       class="ma-0 pa-0"
     >
-      <!-- 图片 -->
       <v-row
         style="height: 35%"
         class="pa-0 ma-0"
@@ -145,8 +123,8 @@
             :src="image"
           />
         </v-col>
+
       </v-row>
-      <!-- 文字 -->
       <v-row
         style="height:65%"
         class="pa-0 ma-0"
@@ -171,17 +149,18 @@
             target="_blank"
             outlined
           >
-            <div>{{ $t('view') }}</div>
+            <div class="text-items">{{ $t('view') }}</div>
           </v-btn>
           <v-btn
             v-if="galleryPaths"
             :color="titleColor"
-            target="_blank"
+            @click="showGallery=true"
             outlined
           >
             <div>{{ $t('gallery') }}</div>
           </v-btn>
         </v-col>
+
       </v-row>
     </v-container>
   </v-sheet>
@@ -190,7 +169,6 @@
 <script>
 
 import ImageGallery from "@/components/ImageGallery.vue";
-// import {publicPath} from "@/../vue.config";
 
 export default {
   components: {ImageGallery},
@@ -206,7 +184,6 @@ export default {
   props: {
     color: String,
     titleColor: String,
-    textColor: String,
 
     image: String,
     apptitle: String,
@@ -217,7 +194,8 @@ export default {
     link: String,
     galleryPaths: Array,
 
-    imgPosition: {
+    textColor: String,
+    textPosition: {
       type: String,
       default: 'left',
       validator: function (value) {
@@ -263,6 +241,15 @@ export default {
 </script>
 
 <style scoped>
+.divFill {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+
 h1 {
   font-size: 50px;
   font-family: "Swis721 BlkEx BT", sans-serif;
