@@ -11,7 +11,6 @@
 
     <!--  localization button  -->
     <v-btn
-      v-if="!(localeLang==='en-US')"
       fab
       small
       outlined
@@ -34,6 +33,7 @@
         :color="COLORS.APP01_BG"
         :title-color="COLORS.APP01"
         :images="simformsImages"
+        image-trasition="fade"
         img-position="left"
         apptitle="SIMForms"
         :app-description="$t('simformsDesc')"
@@ -58,6 +58,7 @@
         :color="COLORS.APP02_BG"
         :title-color="COLORS.APP02"
         :images="typogenImages"
+        image-trasition="slide"
         img-position="right"
         apptitle="TypoGen"
         :appDescription="$t('typogenDesc')"
@@ -93,10 +94,9 @@ export default {
     publicPath,
 
     // localization
-    isLocale: true,
-    localeLang: '',
-    supportedLang: [
-      'en', 'en-US', 'en-GB', 'zh', 'zh-CN', 'zh-HK', 'zh-TW',
+    isChinese: true,
+    supportedChinese: [
+      'zh', 'zh-CN', 'zh-HK', 'zh-TW',
     ],
 
     // back-to-top
@@ -110,25 +110,26 @@ export default {
 
   methods: {
     changeLanguage() {
-      if (this.isLocale) {
+      if (this.isChinese) {
         this.$i18n.locale = 'en-US';
       } else {
-        this.$i18n.locale = this.localeLang;
+        this.$i18n.locale = 'zh-CN';
       }
-      this.isLocale = !this.isLocale
+      this.isChinese = !this.isChinese
     },
   },
 
   mounted() {
     const navLang = navigator.language
-    console.log('browser language: ' + navLang)
+    // console.log('browser language: ' + navLang)
 
-    if (this.supportedLang.includes(navLang)) {
-      this.localeLang = navLang
+    if (this.supportedChinese.includes(navLang)) {
+      this.isChinese = true
+      this.$i18n.locale = 'zh-CN'
     } else {
-      this.localeLang = 'en-US'
+      this.isChinese = false
+      this.$i18n.locale = 'en-US'
     }
-    this.$i18n.locale = this.localeLang;
   },
 
   created() {

@@ -1,7 +1,8 @@
 <template>
   <v-sheet
     :color=color
-    :style="{ width: sheetWidth + 'px', height: sheetHeight + 'px' }"
+    height="900px"
+    :style="{ width: sheetWidth + 'px'}"
   >
     <!-- 相册 -->
     <v-dialog
@@ -29,7 +30,13 @@
         style="height: 100%"
         id="videoArea"
       >
+        <div class="slider" v-if="imageTrasition==='fade'">
+          <transition name="fade" mode="out-in" :duration="{ enter: 500, leave: 500 }">
+            <img :key="currentImage" :src="getImagePath" class="slide" alt="Slider Image">
+          </transition>
+        </div>
         <v-carousel
+          v-if="imageTrasition==='slide'"
           height="100%"
           cycle
           interval="3000"
@@ -40,7 +47,6 @@
             v-for="(item,i) in images"
             :key="i"
             :src="item"
-            
           >
           </v-carousel-item>
         </v-carousel>
@@ -133,7 +139,13 @@
         class="pa-0"
         style="height: 100%"
       >
+        <div class="slider" v-if="imageTrasition==='fade'">
+          <transition name="fade" mode="out-in" :duration="{ enter: 500, leave: 500 }">
+            <img :key="currentImage" :src="getImagePath" class="slide" alt="Slider Image">
+          </transition>
+        </div>
         <v-carousel
+          v-if="imageTrasition==='slide'"
           height="100%"
           cycle
           interval="3000"
@@ -162,7 +174,13 @@
         class="pa-0 ma-0"
       >
         <v-col cols="12" class="pa-0 ma-0">
+          <div class="slider" v-if="imageTrasition==='fade'">
+            <transition name="fade" mode="out-in" :duration="{ enter: 500, leave: 500 }">
+              <img :key="currentImage" :src="getImagePath" class="slide" alt="Slider Image">
+            </transition>
+          </div>
           <v-carousel
+            v-if="imageTrasition==='slide'"
             height="100%"
             cycle
             interval="3000"
@@ -231,6 +249,8 @@ export default {
       sheetWidth: 0,
       sheetHeight: 0,
 
+      currentImage: 0,
+
       showGallery: false,
     };
   },
@@ -241,6 +261,13 @@ export default {
     textColor: String,
 
     images: Array,
+    imageTrasition: {
+      type: String,
+      default: 'slide',
+      validator: function (value) {
+        return ['fade', 'slide'].includes(value);
+      },
+    },
     apptitle: String,
 
     appDescription: String,
@@ -258,7 +285,16 @@ export default {
     },
   },
 
+  mounted() {
+    this.interval = setInterval(this.nextImage, 3000);
+  },
+  beforeDestroy() {
+    clearInterval(this.interval);
+  },
   computed: {
+    getImagePath() {
+      return this.images[this.currentImage];
+    },
     isLandscape() {
       return this.sheetWidth * 1.2 > this.sheetHeight;
     },
@@ -277,6 +313,10 @@ export default {
   },
 
   methods: {
+    nextImage() {
+      this.currentImage = (this.currentImage + 1) % this.images.length;
+    },
+
     updateSheetSize() {
       const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
@@ -298,6 +338,27 @@ export default {
 </script>
 
 <style scoped>
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 h1 {
   font-size: 48px;
   font-family: "TitleFont", sans-serif;

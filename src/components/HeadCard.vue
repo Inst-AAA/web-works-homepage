@@ -4,28 +4,23 @@
     style="align-content: center"
     :style="{ backgroundImage: 'url(' + backgroundImage + ')',backgroundSize: 'cover', width: sheetWidth + 'px', height: 600 + 'px' }"
   >
-    <div style="background-color: rgba(225,225,225,0.67)">
+    <div>
       <br>
       <br>
       <h1>
         Works
       </h1>
-      <br>
-      <br>
 
-      <!--      <p class="institution-text">-->
-      <!--        {{ $t('head1') }}-->
-      <!--        <br>-->
-      <!--        {{ $t('head2') }}-->
-      <!--      </p>-->
       <br>
-
+      <p class="institution-text">
+        {{ $t('head1') }}
+      </p>
       <v-img
         :src=logoImage
-        max-width="100"
+        width="70"
       >
       </v-img>
-      <p style="font-size: 12px">
+      <p style="font-size: 10px">
         <b>
           建筑运算与应用研究所<br>
           Institute of Architectural Algorithms and Applications
@@ -109,18 +104,21 @@ p {
 }
 
 p.institution-text {
-  padding-top: 6px;
   font-family: "Microsoft YaHei UI", sans-serif;
   display: inline-block;
-  text-align: center;
+  text-align: justify;
+  text-indent: 3.5ch;
+  padding-left:3em;
+  padding-right:3em;
   /* Set default font size */
-  font-size: 14px;
+  font-size: 11px;
 }
 
 /* Media query for larger screens */
 @media only screen and (min-width: 768px) {
   p.institution-text {
-    font-size: 18px; /* Set larger font size for larger screens */
+    width: 700px;
+    font-size: 15px; /* Set larger font size for larger screens */
   }
 }
 

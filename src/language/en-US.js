@@ -11,8 +11,7 @@ export default {
     gallery: 'View Gallery',
     close: 'Close',
 
-    head1: 'Web-based computational design applications',
-    head2: 'to provide architects with design assistance and creative inspiration.',
+    head1: 'Architectural design methods are developing in a more scientific and systematic direction. The architectural environment, functional spaces and their construction systems are also in urgent need of integration and quantification; big data and rule-oriented procedural methods provide a scientific dynamic evolution mechanism for the discipline of architecture, forming a disciplinary symbiosis that promotes each other. Its design method needs to find ways to transcend the limitations of existing application software from structural logic algorithms, metaphorically and indirectly connect traditional subject concepts in the digital methods, and use procedural means to reveal patterned solution strategies for design methods to achieving the continuous transformation of digital design methodologies.',
 
     simformsDesc: 'SIMForms is a creative architectural design platform which integrates parametric modeling and AI image synthesis.',
     simformsFea1: 'Input or customize your site to start a design project.',
