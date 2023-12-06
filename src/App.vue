@@ -150,7 +150,7 @@ export default {
     // load scarves imgs
     this.scarvesGallery = []
     const path3 = publicPath + '/images/genartGallery/'
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 10; i++) {
       this.scarvesGallery.push(path3 + (i + 1) + '.jpg')
     }
   }
