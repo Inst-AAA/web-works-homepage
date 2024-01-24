@@ -8,9 +8,6 @@
  */
 
 export const COLORS = {
-    PRIMARY: '#009999',
-    SECONDARY: 'secondary',
-    SECONDARY_ALT: '#424242',
     WARNING: '#e74c3c',
     INFO: '#6f6f6f',
     TITLE_WHITE: '#ffffff',
@@ -19,8 +16,14 @@ export const COLORS = {
 
     APP01: '#009999',
     APP01_BG: '#e5fff6',
+
     APP02: '#BE79A6',
     APP02_BG: '#efdfef',
+
     APP03: '#ffffff',
     APP03_BG: '#732e33',
+
+    APP04: '#de5e01',
+    APP04_BG: '#343434',
+
 };

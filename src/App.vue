@@ -41,6 +41,18 @@
         link="https://web.archialgo.com/simforms/"
       ></AppCard>
 
+      <!--  AnySite  -->
+      <AppCard
+        :color="COLORS.APP02_BG"
+        :title-color="COLORS.APP02"
+        :images="[publicPath + '/images/anysite/1.gif']"
+        image-trasition="slide"
+        img-position="right"
+        apptitle="AnySite"
+        :appDescription="$t('anysiteDesc')"
+        :app-feature="['anysiteFea1','anysiteFea2','anysiteFea3']"
+      ></AppCard>
+
       <!--  Silk  -->
       <AppCardFill
         :color="COLORS.APP03_BG"
@@ -50,20 +62,22 @@
         text-position="right"
         apptitle="GenArt"
         :appDescription="$t('genartDesc')"
-        :gallery-paths=scarvesGallery
+        :gallery-paths=genartGallery
       ></AppCardFill>
 
-      <!--  TypoGen  -->
+      <!--  NEXSpace  -->
       <AppCard
-        :color="COLORS.APP02_BG"
-        :title-color="COLORS.APP02"
-        :images="typogenImages"
+        :color="COLORS.APP04_BG"
+        :title-color="COLORS.APP04"
+        :images="anysiteImages"
+        :text-color="COLORS.EMPTY"
         image-trasition="slide"
-        img-position="right"
-        apptitle="TypoGen"
-        :appDescription="$t('typogenDesc')"
-        :app-feature="['typogenFea1','typogenFea2','typogenFea3']"
+        img-position="left"
+        apptitle="NEXSpace"
+        :appDescription="$t('nexspaceDesc')"
+        :app-feature="['nexspaceFea1','nexspaceFea2','nexspaceFea3']"
       ></AppCard>
+
     </v-main>
   </v-app>
 </template>
@@ -104,8 +118,8 @@ export default {
 
     // gallery paths
     simformsImages: [],
-    typogenImages: [],
-    scarvesGallery: []
+    anysiteImages: [],
+    genartGallery: []
   }),
 
   methods: {
@@ -133,25 +147,25 @@ export default {
   },
 
   created() {
-    // load scarves imgs
+    // load simforms imgs
     this.simformsImages = []
     const path1 = publicPath + '/images/simforms/'
     for (let i = 0; i < 4; i++) {
       this.simformsImages.push(path1 + (i + 1) + '.jpg')
     }
 
-    // load scarves imgs
-    this.typogenImages = []
-    const path2 = publicPath + '/images/typogen/'
+    // load anysite imgs
+    this.anysiteImages = []
+    const path2 = publicPath + '/images/anysite/'
     for (let i = 0; i < 4; i++) {
-      this.typogenImages.push(path2 + (i + 1) + '.jpg')
+      this.anysiteImages.push(path2 + (i + 1) + '.jpg')
     }
 
-    // load scarves imgs
-    this.scarvesGallery = []
+    // load genart imgs
+    this.genartGallery = []
     const path3 = publicPath + '/images/genartGallery/'
     for (let i = 0; i < 10; i++) {
-      this.scarvesGallery.push(path3 + (i + 1) + '.jpg')
+      this.genartGallery.push(path3 + (i + 1) + '.jpg')
     }
   }
 };
