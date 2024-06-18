@@ -7,7 +7,7 @@
  * @time 12:48
  */
 export default {
-    view: 'Open Project',
+    view: 'Tryout in Browser',
     gallery: 'View Gallery',
     close: 'Close',
 
@@ -18,15 +18,20 @@ export default {
     simformsFea2: 'Provide dozens of multi-storey/high-rise building styles. Rapidly generate precise 3D model with simple parameters.',
     simformsFea3: 'Generate architectural concept renderings with AIGC, without complex configurations.',
 
-    anysiteDesc: 'AnySite is a digital design tool tailored for the multi-level subdivision of sites, providing assistance in site planning for urban and architectural design processes.',
+    anysiteDesc: 'ANYSite is a digital design tool tailored for the multi-level subdivision of sites, providing assistance in site planning for urban and architectural design processes.',
     anysiteFea1: 'Import the design site and automatically subdivide it based on environmental and contextual considerations.',
     anysiteFea2: 'Multi-level subdivision algorithms of plots are embedded, spanning various scales from urban zones to building sites.',
     anysiteFea3: 'Supporting navigation, modification, and area ratio updates for different levels of plots.',
 
-    nexspaceDesc: '（In Progress）NEXSpace is a typology-oriented comprehensive architectural spatial layout generation application.',
-    nexspaceFea1: 'Selecting morphological prototypes for each plot, defined based on topological relationships.',
-    nexspaceFea2: 'Automatically optimizing layout models based on site conditions to achieve spatial layout updates.',
-    nexspaceFea3: 'Upload the data of function-to-area requirements for automated room allocation and arrangement.',
+    nexuspaceDesc: 'NEXUSpace is a typology-oriented comprehensive architectural spatial layout generation application.',
+    nexuspaceFea1: 'Select morphological prototypes for each plot, defined based on topological relationships.',
+    nexuspaceFea2: 'Automatically optimize layout models based on site conditions to achieve spatial layout updates.',
+    nexuspaceFea3: 'Input the data of function-to-area requirements for automated room allocation and arrangement.',
+
+    snaprenderDesc: 'SnapRender is a web-based architectural renderer that transforms preliminary sketches or line drawings into realistic architectural renderings with just one click. Its intuitive interface ensures a quick start and efficient process, making it especially suitable for design practices that require high time efficiency.',
+    snaprenderFea1: 'Identifies graphic outlines to provide diverse design inspirations.',
+    snaprenderFea2: 'Assists in early-stage scheme deliberations by presenting visual renderings.',
+    snaprenderFea3: 'Enriches model scene details, enhancing the overall scheme expression.',
 
     genartDesc: 'GenArt takes generative art as its core content and provides creative product design and service.',
 }

@@ -6,7 +6,7 @@
     <!-- 相册 -->
     <v-dialog
       v-model="showGallery"
-      width="800"
+      width="65%"
     >
       <ImageGallery
         height="100%"
@@ -92,7 +92,8 @@
             target="_blank"
             outlined
           >
-            <div>{{ $t('view') }}</div>
+            <v-icon left>mdi-launch</v-icon>
+            {{ $t('view') }}
           </v-btn>
           <v-btn
             v-if="galleryPaths"
@@ -100,7 +101,8 @@
             @click="showGallery=true"
             outlined
           >
-            <div>{{ $t('gallery') }}</div>
+            <v-icon left>mdi-view-gallery-outline</v-icon>
+            {{ $t('gallery') }}
           </v-btn>
         </v-col>
       </v-row>
@@ -149,7 +151,8 @@
             target="_blank"
             outlined
           >
-            <div class="text-items">{{ $t('view') }}</div>
+            <v-icon left>mdi-launch</v-icon>
+            {{ $t('view') }}
           </v-btn>
           <v-btn
             v-if="galleryPaths"
@@ -157,7 +160,8 @@
             @click="showGallery=true"
             outlined
           >
-            <div>{{ $t('gallery') }}</div>
+            <v-icon left>mdi-view-gallery-outline</v-icon>
+            {{ $t('gallery') }}
           </v-btn>
         </v-col>
 

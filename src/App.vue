@@ -41,19 +41,46 @@
         link="https://web.archialgo.com/simforms/"
       ></AppCard>
 
-      <!--  AnySite  -->
+      <!--  SnapRender  -->
+      <AppCard
+        :color="COLORS.APP05_BG"
+        :title-color="COLORS.APP05"
+        :images="snaprenderImages"
+        image-trasition="fade"
+        img-position="right"
+        apptitle="SnapRender"
+        :appDescription="$t('snaprenderDesc')"
+        :app-feature="['snaprenderFea1','snaprenderFea2','snaprenderFea3']"
+        link="https://web.archialgo.com/render/"
+      ></AppCard>
+
+      <!--  ANYSite  -->
       <AppCard
         :color="COLORS.APP02_BG"
         :title-color="COLORS.APP02"
-        :images="[publicPath + '/images/anysite/1.gif']"
-        image-trasition="slide"
-        img-position="right"
-        apptitle="AnySite"
+        :images="anysiteImages"
+        image-trasition="fade"
+        img-position="left"
+        apptitle="ANYSite"
         :appDescription="$t('anysiteDesc')"
         :app-feature="['anysiteFea1','anysiteFea2','anysiteFea3']"
+        link="https://web.archialgo.com/anysite/"
       ></AppCard>
 
-      <!--  Silk  -->
+      <!--  NEXUSpace  -->
+      <AppCard
+        :color="COLORS.APP04_BG"
+        :title-color="COLORS.APP04"
+        :images="nexuspaceImages"
+        image-trasition="fade"
+        img-position="right"
+        apptitle="NEXUSpace"
+        :appDescription="$t('nexuspaceDesc')"
+        :app-feature="['nexuspaceFea1','nexuspaceFea2','nexuspaceFea3']"
+        link="https://web.archialgo.com/nexuspace/"
+      ></AppCard>
+
+      <!--  GenArt  -->
       <AppCardFill
         :color="COLORS.APP03_BG"
         :title-color="COLORS.APP03"
@@ -65,18 +92,6 @@
         :gallery-paths=genartGallery
       ></AppCardFill>
 
-      <!--  NEXSpace  -->
-      <AppCard
-        :color="COLORS.APP04_BG"
-        :title-color="COLORS.APP04"
-        :images="anysiteImages"
-        :text-color="COLORS.EMPTY"
-        image-trasition="slide"
-        img-position="left"
-        apptitle="NEXSpace"
-        :appDescription="$t('nexspaceDesc')"
-        :app-feature="['nexspaceFea1','nexspaceFea2','nexspaceFea3']"
-      ></AppCard>
 
     </v-main>
   </v-app>
@@ -117,9 +132,36 @@ export default {
     showButton: false,
 
     // gallery paths
-    simformsImages: [],
-    anysiteImages: [],
-    genartGallery: []
+    simformsImages: ['https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181458128.png',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181455368.png',
+      'https://amomorning-image-base.oss-cn-hangzhou.aliyuncs.com/images/202406121116588.png',
+    ],
+    anysiteImages: ['https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/Snipaste_2024-06-18_15-28-39.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406131622658.jpeg',
+    ],
+    nexuspaceImages: ['https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/nexuspace-interface-20240618.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/nexuspace-wangyichen.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/nexuspace-zhuchangqing.jpg'
+    ],
+    genartGallery: [],
+    snaprenderImages: ['https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181504528.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181446445.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181503735.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181445759.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181513523.png',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181512416.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181447616.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181446397.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181512840.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181511435.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181508951.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181456551.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181509280.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181443823.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181510657.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181457469.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181443018.jpg',
+      'https://archialgo-com-sources.oss-cn-hangzhou.aliyuncs.com/images/202406181500624.jpg',]
   }),
 
   methods: {
@@ -148,19 +190,19 @@ export default {
 
   created() {
     // load simforms imgs
-    this.simformsImages = []
-    const path1 = publicPath + '/images/simforms/'
-    for (let i = 0; i < 4; i++) {
-      this.simformsImages.push(path1 + (i + 1) + '.jpg')
-    }
+    // this.simformsImages = []
+    // const path1 = publicPath + '/images/simforms/'
+    // for (let i = 0; i < 4; i++) {
+    //   this.simformsImages.push(path1 + (i + 1) + '.jpg')
+    // }
 
-    // load anysite imgs
-    this.anysiteImages = []
-    const path2 = publicPath + '/images/anysite/'
-    for (let i = 0; i < 4; i++) {
-      this.anysiteImages.push(path2 + (i + 1) + '.jpg')
-    }
-
+    // // load anysite imgs
+    // this.anysiteImages = []
+    // const path2 = publicPath + '/images/anysite/'
+    // for (let i = 0; i < 4; i++) {
+    //   this.anysiteImages.push(path2 + (i + 1) + '.jpg')
+    // }
+    //
     // load genart imgs
     this.genartGallery = []
     const path3 = publicPath + '/images/genartGallery/'

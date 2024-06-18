@@ -78,7 +78,8 @@
           target="_blank"
           outlined
         >
-          <div>{{ $t('view') }}</div>
+          <v-icon left>mdi-launch</v-icon>
+          {{ $t('view') }}
         </v-btn>
         <v-btn
           v-if="galleryPaths"
@@ -86,7 +87,8 @@
           target="_blank"
           outlined
         >
-          <div>{{ $t('gallery') }}</div>
+          <v-icon left>mdi-view-gallery-outline</v-icon>
+          {{ $t('gallery') }}
         </v-btn>
       </v-col>
     </v-row>
@@ -122,7 +124,8 @@
           target="_blank"
           outlined
         >
-          <div>{{ $t('view') }}</div>
+          <v-icon left>mdi-launch</v-icon>
+          {{ $t('view') }}
         </v-btn>
         <v-btn
           v-if="galleryPaths"
@@ -130,7 +133,8 @@
           target="_blank"
           outlined
         >
-          <div>{{ $t('gallery') }}</div>
+          <v-icon left>mdi-view-gallery-outline</v-icon>
+          {{ $t('gallery') }}
         </v-btn>
       </v-col>
       <!-- 图片 -->
@@ -221,7 +225,8 @@
             target="_blank"
             outlined
           >
-            <div>{{ $t('view') }}</div>
+            <v-icon left>mdi-launch</v-icon>
+            {{ $t('view') }}
           </v-btn>
           <v-btn
             v-if="galleryPaths"
@@ -229,7 +234,8 @@
             target="_blank"
             outlined
           >
-            <div>{{ $t('gallery') }}</div>
+            <v-icon left>mdi-view-gallery-outline</v-icon>
+            {{ $t('gallery') }}
           </v-btn>
         </v-col>
       </v-row>

@@ -23,7 +23,10 @@ export const COLORS = {
     APP03: '#ffffff',
     APP03_BG: '#732e33',
 
-    APP04: '#de5e01',
-    APP04_BG: '#343434',
+    APP04: '#4a70a1',
+    APP04_BG: '#e0e6f8',
+
+    APP05: '#84a423',
+    APP05_BG: '#eefaca',
 
 };
