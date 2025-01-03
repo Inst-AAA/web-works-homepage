@@ -33,5 +33,15 @@ export default {
     snaprenderFea2: 'Assists in early-stage scheme deliberations by presenting visual renderings.',
     snaprenderFea3: 'Enriches model scene details, enhancing the overall scheme expression.',
 
+    anyplaceDesc: 'ANYPlace is a 3D site modeling tool built on the ArchiWeb platform using open-source map data. Ideal for urban planning and architectural design, enabling quick, precise 3D model generation for design project.\n',
+    anyplaceFea1: 'Real-time 3D model generation from OSM data.',
+    anyplaceFea2: 'Customizable modeling with area selection.',
+    anyplaceFea3: 'Intuitive interface for professionals and enthusiasts alike.',
+
+    flexurbanDesc: 'FLEXUrban is a multi-functional web application for generative urban design which supports the entire process of site division, typology-based building model generation, and facade detail generation.',
+    flexurbanFea1: 'Generate adjustable plot division results according to the site and environment features.',
+    flexurbanFea2: 'A variety of building prototype options are set for different land use functions to automatically adapt to the plot.',
+    flexurbanFea3: 'Provide semi-automatic and fully automatic generation options, flexible to meet the design needs.',
+
     genartDesc: 'GenArt takes generative art as its core content and provides creative product design and service.',
 }

@@ -33,6 +33,15 @@ export default {
     snaprenderFea2: '辅助前期方案推敲，呈现可视化效果图',
     snaprenderFea3: '丰富模型场景细节，深化整体方案表达',
 
+    anyplaceDesc: 'ANYPlace是一个使用开源地图数据建立的三维场地建模工具。为城市规划和建筑设计提供有效辅助，快速、精确地为设计项目生成三维场地模型。',
+    anyplaceFea1: '实时生成3D模型，便捷高效',
+    anyplaceFea2: '支持特定区域自定义建模',
+    anyplaceFea3: '界面直观，适合各类用户',
+
+    flexurbanDesc: 'FLEXUrban是一个城市生成设计的多功能应用工具，涵盖场地划分、建筑类型模型生成、立面细部生成的全流程支持。',
+    flexurbanFea1: '根据场地环境特征，生成可调节的地块划分结果',
+    flexurbanFea2: '针对不同用地功能设置了多种建筑原型选项，自动适配地块形状',
+    flexurbanFea3: '提供半自动与全自动的不同生成选项，灵活适配设计需求',
 
     genartDesc: 'GenArt以生成艺术为核心内容，提供文创产品设计与服务。',
 }

@@ -29,4 +29,10 @@ export const COLORS = {
     APP05: '#84a423',
     APP05_BG: '#eefaca',
 
+    APP06: '#7c93b0',
+    APP06_BG: '#d7e1f5',
+
+    APP07: '#e66920',
+    APP07_BG: '#fdd0a2',
+
 };

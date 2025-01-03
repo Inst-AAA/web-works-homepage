@@ -13,7 +13,7 @@
             alt="Logo"
             class="shrink mr-2"
             contain
-            src="@/assets/logo-black.png"
+            src="@/assets/logo-black-500.png"
             transition="scale-transition"
             width="30"
           />

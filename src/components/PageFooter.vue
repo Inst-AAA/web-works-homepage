@@ -13,7 +13,7 @@
 
         {{ new Date().getFullYear() }} - ©
         <a class="text-decoration-none" href=" " style="color:#ffffff;" target="_blank">
-          <strong>Inst. AAA</strong>
+          <strong>Lab. AAA</strong>
         </a >
 
         <v-spacer></v-spacer>

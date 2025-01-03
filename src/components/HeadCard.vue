@@ -16,14 +16,14 @@
         {{ $t('head1') }}
       </p>
       <v-img
-        :src=logoImage
+        src="@/assets/logo-black-500.png"
         width="70"
       >
       </v-img>
-      <p style="font-size: 10px">
+      <p style="font-size: 11px">
         <b>
-          建筑运算与应用研究所<br>
-          Institute of Architectural Algorithms and Applications
+          建筑运算与应用实验室<br>
+          Lab of Architectural Algorithm and Application
         </b>
       </p>
       <br>
@@ -44,7 +44,6 @@ export default {
       sheetWidth: 0,
       sheetHeight: 0,
       backgroundImage: publicPath + "/images/default_bg.jpg",
-      logoImage: publicPath + "/images/aaa.png"
     };
   },
 

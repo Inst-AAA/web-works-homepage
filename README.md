@@ -1,3 +1,3 @@
-### ArchiWeb works homepage of Inst. AAA
+### ArchiWeb works homepage of Lab. AAA
 
-#### https://web.archialgo.com/works/
+#### https://web.archialgo.com/workts/
