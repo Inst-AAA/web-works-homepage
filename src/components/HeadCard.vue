@@ -2,7 +2,7 @@
   <v-sheet
     :color="COLORS.TITLE_WHITE"
     style="align-content: center"
-    :style="{ backgroundImage: 'url(' + backgroundImage + ')',backgroundSize: 'cover', width: sheetWidth + 'px', height: 600 + 'px' }"
+    :style="{ backgroundImage: 'url(' + backgroundImage + ')',backgroundSize: 'cover', width: sheetWidth + 'px', height: 750 + 'px' }"
   >
     <div>
       <br>
@@ -15,6 +15,9 @@
       <p class="institution-text">
         {{ $t('head1') }}
       </p>
+      <p class="institution-text">
+        {{ $t('head2') }}
+      </p>
       <v-img
         src="@/assets/logo-black-500.png"
         width="70"
@@ -23,7 +26,7 @@
       <p style="font-size: 11px">
         <b>
           建筑运算与应用实验室<br>
-          Lab of Architectural Algorithm and Application
+          Laboratory of Architectural Algorithm and Application
         </b>
       </p>
       <br>
@@ -116,7 +119,7 @@ p.institution-text {
 /* Media query for larger screens */
 @media only screen and (min-width: 768px) {
   p.institution-text {
-    width: 700px;
+    width: 800px;
     font-size: 15px; /* Set larger font size for larger screens */
   }
 }
